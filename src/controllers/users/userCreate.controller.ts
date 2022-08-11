@@ -1,8 +1,12 @@
 import { Request, Response } from "express";
 
-export const userCreate = (req: Request, res: Response) => {
+import { userCreateService } from "../../srvices/userCreate.service";
+
+export const userCreate = async (req: Request, res: Response) => {
   try {
-    return res.status(201).send("teste");
+    const { name, email, password } = req.body;
+    const newUser = await userCreateService({ name, email, password });
+    return res.status(201).send(newUser);
   } catch (err) {
     if (err instanceof Error) {
       return res.status(400).send({

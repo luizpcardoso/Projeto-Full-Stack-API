@@ -4,6 +4,7 @@ require("dotenv").config();
 
 export const AppDataSource = new DataSource({
   type: "postgres",
+  host: "database",
 
   url: process.env.DATABASE_URL,
   ssl:

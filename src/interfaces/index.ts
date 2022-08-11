@@ -5,11 +5,8 @@ export interface IUserCreate {
 }
 
 export interface IUser {
-  id: string;
+  user_id: string;
   name: string;
   email: string;
   password: string;
-  team: object;
-
-  cart: any;
 }

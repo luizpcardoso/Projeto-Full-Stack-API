@@ -1,4 +1,4 @@
-version: "3"
+version: "3.3"
 services:
   api:
     container_name: projectApi
@@ -14,7 +14,7 @@ services:
     depends_on:
       - db
     command: bash -c 'yarn migration:run && yarn dev'
-    command: bash -c 'yarn dev'
+
   db:
     container_name: projectApiPg
     image: postgres
